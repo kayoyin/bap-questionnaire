@@ -26,7 +26,7 @@ if __name__ == "__main__":
         questions = file.readlines()
     
     print("You are about to fill out a series of statements related to personality and lifestyle. \
-For each question, circle that answer that best describes how often that statement applies to you. 3\
+For each question, circle that answer that best describes how often that statement applies to you. \
 Many of these questions ask about \
 your interactions with other people. Please think about \
 the way you are with most people, rather than special \
