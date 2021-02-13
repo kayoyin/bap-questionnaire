@@ -4,5 +4,5 @@ This toolkit allows you to complete [The Broad Autism Phenotype Questionnaire](h
 
 To use this toolkit:
 ```bash
-python questionnaire.py --gender (m | f) --answere (self | informant)
+python questionnaire.py --gender (m | f) --answerer (self | informant)
 ```
