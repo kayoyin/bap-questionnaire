@@ -71,21 +71,21 @@ are confused, please give it your best guess")
     print("RESULTS")
     print(f"Aloof (cutoff={t[g][a]['aloof']}):")
     print(round(aloof_score/12, 2))
-    if aloof_score > t[g][a]['aloof']:
+    if aloof_score/12 > t[g][a]['aloof']:
         print("Your aloofness score is higher than the cutoff for your gender and type of answerer.")
     print()
     print(f"Pragmatic language (cutoff={t[g][a]['pl']}):")
     print(round(pl_score/12, 2))
-    if pl_score > t[g][a]['pl']:
+    if pl_score/12 > t[g][a]['pl']:
         print("Your pragmatic language score is higher than the cutoff for your gender and type of answerer.")
     print()
     print(f"Rigidity (cutoff={t[g][a]['rigid']}):")
     print(round(rigid_score/12, 2))
-    if rigid_score > t[g][a]['rigid']:
+    if rigid_score/12 > t[g][a]['rigid']:
         print("Your rigidity score is higher than the cutoff for your gender and type of answerer.")
     print()
     print(f"Total (cutoff={t[g][a]['total']}):")
     print(round(total_score/36, 2))
-    if total_score > t[g][a]['total']:
+    if total_score/12 > t[g][a]['total']:
         print("Your average score is higher than the cutoff for your gender and type of answerer.")
     print()
