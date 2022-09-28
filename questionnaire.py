@@ -25,8 +25,8 @@ if __name__ == "__main__":
     with open("questions.txt", 'r') as file:
         questions = file.readlines()
     
-    print("You are about to fill out a series of statements related to personality and lifestyle. \
-For each question, circle that answer that best describes how often that statement applies to you. \
+    print("You are about to fill out a series of 36 statements related to personality and lifestyle. \
+For each question, enter the number associated with the answer that best describes how often that statement applies to you. \
 Many of these questions ask about \
 your interactions with other people. Please think about \
 the way you are with most people, rather than special \
@@ -47,13 +47,13 @@ are confused, please give it your best guess")
     for q in questions:
         answers.append(int(input(q)))
 
-    reverse = [1, 3, 7, 9, 12, 15, 16, 19, 21, 23, 25, 28, 30, 34, 36]
+    reverse_qs = [1, 3, 7, 9, 12, 15, 16, 19, 21, 23, 25, 28, 30, 34, 36]
     aloof = [1, 5, 9, 12, 16, 18, 23, 25, 27, 28, 31, 36]
     pl = [2, 4, 7, 10, 11, 14, 17, 20, 21, 29, 32, 34]
     rigid = [3, 6, 8, 13, 15, 19, 22, 24, 26, 30, 33, 35]
     reverse = {1:6, 2:5, 3:4, 4:3, 5:2, 6:1}
 
-    for i in reverse:
+    for i in reverse_qs:
         answers[i-1] = reverse[answers[i-1]]
 
     aloof_score = sum([answers[i-1] for i in aloof])
@@ -69,15 +69,23 @@ are confused, please give it your best guess")
     a = args.answerer
 
     print("RESULTS")
-    print(f"Aloof (T={t[g][a]['aloof']}):")
+    print(f"Aloof (cutoff={t[g][a]['aloof']}):")
     print(round(aloof_score/12, 2))
+    if aloof_score > t[g][a]['aloof']:
+        print("Your aloofness score is higher than the cutoff for your gender and type of answerer.")
     print()
-    print(f"Pragmatic language (T={t[g][a]['pl']}):")
+    print(f"Pragmatic language (cutoff={t[g][a]['pl']}):")
     print(round(pl_score/12, 2))
+    if pl_score > t[g][a]['pl']:
+        print("Your pragmatic language score is higher than the cutoff for your gender and type of answerer.")
     print()
-    print(f"Rigidity (T={t[g][a]['rigid']}):")
+    print(f"Rigidity (cutoff={t[g][a]['rigid']}):")
     print(round(rigid_score/12, 2))
+    if rigid_score > t[g][a]['rigid']:
+        print("Your rigidity score is higher than the cutoff for your gender and type of answerer.")
     print()
-    print(f"Total (T={t[g][a]['total']}):")
+    print(f"Total (cutoff={t[g][a]['total']}):")
     print(round(total_score/36, 2))
+    if total_score > t[g][a]['total']:
+        print("Your average score is higher than the cutoff for your gender and type of answerer.")
     print()
