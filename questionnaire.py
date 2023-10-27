@@ -86,6 +86,6 @@ are confused, please give it your best guess")
     print()
     print(f"Total (cutoff={t[g][a]['total']}):")
     print(round(total_score/36, 2))
-    if total_score/12 > t[g][a]['total']:
+    if total_score/36 > t[g][a]['total']:
         print("Your average score is higher than the cutoff for your gender and type of answerer.")
     print()
